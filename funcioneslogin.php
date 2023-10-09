@@ -85,4 +85,20 @@ function logout ($usuario){
     file_put_contents('logueados.csv', implode('', $archivo));
 }
 
+function EstaLogueado($usuario,$ruta) {
+    $datos=leeFicheroCSV($ruta);
+
+    $existe=false;
+
+    foreach ($datos as $valor) {
+            if ($valor[0]===$usuario){
+                $existe=true;
+            }
+    }
+
+    return $existe;
+}
+
+
+
 ?>

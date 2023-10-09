@@ -1,6 +1,9 @@
 <?php
 
-$usuario=$_GET['usuario'];
+require_once "funcioneslogin.php";
+require_once "sesion.php";
+
+
 $ultimo_login = $_COOKIE['cookie'];
 
 
@@ -33,6 +36,8 @@ $ultimo_login = $_COOKIE['cookie'];
 </html>
 
 <?php
+
+
 
 if (isset($ultimo_login)){
 

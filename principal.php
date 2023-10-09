@@ -13,6 +13,10 @@ $eliminar = isset($_POST['eliminar']);
 $modificar = isset($_POST['modificar']);
 $muestra = isset($_POST['muestra']);
 
+
+
+
+
 if($nuevo){
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 

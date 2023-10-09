@@ -1,12 +1,10 @@
 <?php
 
-session_start(); 
 
 require_once "funciones.php";
 require_once "funcioneslogin.php";
+require_once "sesion.php";
 
-//$usuario = $_POST['usuario'];
-//$contraseña = $_POST['contraseña'];
 
 if(isset($_POST['usuario']) && isset($_POST['contraseña'])) {
     $usuario = $_POST['usuario'];
@@ -17,13 +15,6 @@ $login = isset($_POST['login']);
 $registrarse = isset($_POST['registrarse']);
 
 
-
-
-
-
-
-
-//$_SESSION['usuario']=$usuario;
 
 
 if($login){
@@ -37,19 +28,17 @@ if($login){
             //Creamos la cookie
             setcookie("cookie", time(), time()+3600);
 
-            echo "Credenciales válidas.";
 
             login($_POST['usuario']);
 
-            header("Location: http://localhost/Ejercicio26.09.2023/index.php?usuario=$usuario");
+            iniciarSesion('user', $usuario);
+
+            header("Location: http://localhost/Ejercicio26.09.2023/index.php");
 
         } elseif ($resultado === false) {
             echo "Credenciales inválidas.";
 
-
         }
-
-
 
     }
     

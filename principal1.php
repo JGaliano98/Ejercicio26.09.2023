@@ -24,6 +24,9 @@ $modificar = isset($_POST['modificar']);
 $muestra = isset($_POST['muestra']);
 $logout = isset ($_POST['logout']);
 
+
+
+
 if($nuevo){
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -76,8 +79,7 @@ if($logout){
         
         logout($usuario);
 
-
-        header("Location: http://localhost/Ejercicio26.09.2023/login.php");
+        cerrarSesion();
 
     }
 
