@@ -1,5 +1,6 @@
 <?php
 
+
 function compruebaUsuario($archivo, $usuario, $contraseña) {
 
 

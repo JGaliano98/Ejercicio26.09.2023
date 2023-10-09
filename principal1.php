@@ -1,19 +1,20 @@
 <?php
-//session_start();
 
+session_start();
 
 
 require "funciones.php";
 require "funcioneslogin.php";
+require "sesion.php";
 
 //Declaramos las variables
 
 $id = $_POST['id'];
 $nombre =$_POST['nombre'];
 
-//$usuario = $_SESSION['usuario'];
+$usuario = $_SESSION['user'];
 
-$usuario = $_POST['usuario'];
+//$usuario = $_POST['usuario'];
 
 
 //Declaramos los botones
