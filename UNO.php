@@ -5,7 +5,7 @@ session_start();
 
 //Declaramos las variables
 
-$_SESSION['usuario']="Pepico";
+$_SESSION['usuario']="Pepico"; //
 
 
 

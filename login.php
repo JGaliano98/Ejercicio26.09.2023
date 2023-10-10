@@ -4,6 +4,9 @@
 require_once "funciones.php";
 require_once "funcioneslogin.php";
 require_once "sesion.php";
+require_once "usuario.php";
+
+
 
 
 if(isset($_POST['usuario']) && isset($_POST['contraseña'])) {
@@ -31,9 +34,20 @@ if($login){
 
             login($_POST['usuario']);
 
+            $user = new Usuario($usuario, $contraseña, 'Alumno'); //Creamos el objeto
+
+            //echo json_encode($user);
+
+            echo (json_decode(json_encode($user)));
+            
+            print_r(json_decode(json_encode($user)));
+
             iniciarSesion('user', $usuario);
 
-            header("Location: http://localhost/Ejercicio26.09.2023/index.php");
+            //header("Location: http://localhost/Ejercicio26.09.2023/index.php");
+
+
+            
 
         } elseif ($resultado === false) {
             echo "Credenciales inválidas.";
